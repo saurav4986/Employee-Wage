@@ -1,7 +1,7 @@
 package com.bridgelabz;
-/*Use Case 10
-Ability to manage Employee
-Wage of multiple companies*/
+/*Use Case 11
+Ability to manage Employee Wage of multiple companies using Interface approach
+- Note: Refactor to have one EmpWageProgram to implement Interface*/
 
 import java.util.ArrayList;
 import java.util.List;
