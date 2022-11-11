@@ -1,17 +1,14 @@
 package com.bridgelabz;
-/*Use Case 12
-Refactor to have list of multiple companies to manage Employee Wage.
-- Note: Refactor to use ArrayList
-instead of array*/
+/*Use Case 13
+Store the Daily Wage along with the Total Wage*/
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class EmpWage {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        Map<String, List<Integer>> dailyWageMap=new HashMap<String, List<Integer>>();
         // Arraylist to save the emp wages
         List<Integer> wageList = new ArrayList<>();
 
@@ -38,9 +35,18 @@ public class EmpWage {
                     MAX_WORKING_HOURS);
             int wage = empObj.totalWage();
             wageList.add(wage);
+            dailyWageMap.put(companyName, empObj.dailyWageList);
         }
-        System.out.println("Array of company wage:");
+
+        //Array list to add all the monthly wage
+        System.out.println("Array of monthly wages of companies: ");
         System.out.println(wageList);
         sc.close();
+        //Iterating the Map
+        System.out.println("The Daily Wage of the Companies are below: ");
+        for(Map.Entry<String, List<Integer>> dailyWage: dailyWageMap.entrySet()) {
+            System.out.println("The Company Name is: "+dailyWage.getKey()+" and their daily wage is: "+dailyWage.getValue());
+        }
+
     }
 }
