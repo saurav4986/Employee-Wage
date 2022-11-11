@@ -1,7 +1,8 @@
 package com.bridgelabz;
-/*Use Case 11
-Ability to manage Employee Wage of multiple companies using Interface approach
-- Note: Refactor to have one EmpWageProgram to implement Interface*/
+/*Use Case 12
+Refactor to have list of multiple companies to manage Employee Wage.
+- Note: Refactor to use ArrayList
+instead of array*/
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,11 +10,10 @@ import java.util.Scanner;
 
 public class EmpWage {
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
-        List<Integer> wageList=new ArrayList<>();
+        // Arraylist to save the emp wages
+        List<Integer> wageList = new ArrayList<>();
 
         System.out.println("Welcome to Employee Wage Computation Program");
 
@@ -34,8 +34,9 @@ public class EmpWage {
             System.out.println("Enter Total No. of Working Hours in a Month:");
             int MAX_WORKING_HOURS = sc.nextInt();
 
-            Employee_Wage_Program empObj= new Employee_Wage_Program(companyName,wagePerHour,MAX_WORKING_DAYS,MAX_WORKING_HOURS);
-            int wage=empObj.totalWage();
+            Employee_Wage_Program empObj = new Employee_Wage_Program(companyName, wagePerHour, MAX_WORKING_DAYS,
+                    MAX_WORKING_HOURS);
+            int wage = empObj.totalWage();
             wageList.add(wage);
         }
         System.out.println("Array of company wage:");
